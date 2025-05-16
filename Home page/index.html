@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Psyche-Spectrum</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- Main navbar -->
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" class="logo" alt="Psyche-Spectrum Logo" />
+                <span class="site-title">Psyche-Spectrum</span>
+            </div>
+
+            <!-- Full nav links for desktop -->
+            <ul class="nav-links">
+                <li><a href="#">Personality Test</a></li>
+                <li><a href="#">Personality Types</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="login-btn">Log In</a></li>
+            </ul>
+
+            <!-- Hamburger icon (mobile only) -->
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                &#9776;
+            </button>
+        </nav>
+    </header>
+
+    <!-- Side menu -->
+    <div class="side-menu" id="side-menu" aria-hidden="true">
+        <div class="menu-header">
+            <button class="close-btn" id="close-btn" aria-label="Close Menu">&times;</button>
+        </div>
+        <ul class="menu-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Test</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

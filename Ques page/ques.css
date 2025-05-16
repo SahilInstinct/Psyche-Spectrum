@@ -1,0 +1,109 @@
+ body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e0c3fc);
+      margin: 0;
+      padding: 0;
+    }
+
+    .quiz-container {
+      max-width: 750px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #6c3483;
+      font-size: 2rem;
+    }
+
+    .question {
+      margin-bottom: 30px;
+      background: #fdfdfd;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border-left: 5px solid #8e44ad;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .question p {
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .scale {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+    }
+
+    .scale label {
+      flex: 1;
+      background-color: #eee;
+      padding: 10px 0;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .scale label:hover {
+      background-color: #dcdcdc;
+      transform: scale(1.05);
+    }
+
+    .scale input[type="radio"] {
+      display: none;
+    }
+
+    .scale input[type="radio"]:checked + span {
+      background-color: #8e44ad;
+      color: white;
+      font-weight: bold;
+    }
+
+    #prev-btn,
+    #next-btn {
+      padding: 12px 24px;
+      margin: 20px 10px 0;
+      border: none;
+      border-radius: 30px;
+      background-color: #8e44ad;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    #prev-btn:hover,
+    #next-btn:hover {
+      background-color: #732d91;
+      transform: translateY(-2px);
+    }
+
+    #prev-btn:disabled,
+    #next-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
