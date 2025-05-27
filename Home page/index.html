@@ -10,15 +10,14 @@
 </head>
 
 <body>
+    <!-- ===== Navbar ===== -->
     <header>
-        <!-- Main navbar -->
         <nav class="navbar">
             <div class="logo-container">
                 <img src="logo.png" class="logo" alt="Psyche-Spectrum Logo" />
                 <span class="site-title">Psyche-Spectrum</span>
             </div>
 
-            <!-- Full nav links for desktop -->
             <ul class="nav-links">
                 <li><a href="#">Personality Test</a></li>
                 <li><a href="#">Personality Types</a></li>
@@ -27,14 +26,13 @@
                 <li><a href="#" class="login-btn">Log In</a></li>
             </ul>
 
-            <!-- Hamburger icon (mobile only) -->
             <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
                 &#9776;
             </button>
         </nav>
     </header>
 
-    <!-- Side menu -->
+    <!-- ===== Side Menu (Mobile) ===== -->
     <div class="side-menu" id="side-menu" aria-hidden="true">
         <div class="menu-header">
             <button class="close-btn" id="close-btn" aria-label="Close Menu">&times;</button>
@@ -46,6 +44,73 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </div>
+    <div class="video-container">
+        <video autoplay loop muted id="background-video">
+            <source src="brainbg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Explore Your Inner Universe</h1>
+            <p>Take the Psyche-Spectrum test to uncover your true personality type and align with your cosmic potential.
+            </p>
+            <a href="#" class="test-btn">Start the Test</a>
+        </div>
+    </section>
+    <section>
+
+        <!-- 1st flashcard  -->
+        <div class="flash-cards">
+            <div class="personality-card ">
+                <h1>Understand others</h1>
+                <p>In our type descriptions you will learn what really drives, inspires, and worries different
+                    personality
+                    types, helping you build more meaningful relationships.</p>
+                <a href="#" class="personality-types">Personality types</a>
+            </div>
+            <div class="personality-img">
+                <img class="image1 home-img"
+                    src="https://raw.githubusercontent.com/SahilInstinct/Psyche-Spectrum/refs/heads/main/intro-1.png"
+                    alt="" srcset="">
+            </div>
+        </div>
+
+        <!-- 2nd flashcard  -->
+        <div class="flash-cards-opp">
+            <div class="personality-img">
+                <img class="image1 home-img"
+                    src="https://raw.githubusercontent.com/SahilInstinct/Psyche-Spectrum/refs/heads/main/intro-1.png"
+                    alt="" srcset="">
+            </div>
+            <div class="personality-card ">
+                <h1>Understand others</h1>
+                <p>In our type descriptions you will learn what really drives, inspires, and worries different
+                    personality
+                    types, helping you build more meaningful relationships.</p>
+                <a href="#" class="personality-types">Personality types</a>
+            </div>
+        </div>
+
+        <!-- 3rd flashcard  -->
+        <div class="flash-cards">
+            <div class="personality-card ">
+                <h1>Understand others</h1>
+                <p>In our type descriptions you will learn what really drives, inspires, and worries different
+                    personality
+                    types, helping you build more meaningful relationships.</p>
+                <a href="#" class="personality-types">Personality types</a>
+            </div>
+            <div class="personality-img">
+                <img class="image1 home-img"
+                    src="https://raw.githubusercontent.com/SahilInstinct/Psyche-Spectrum/refs/heads/main/intro-1.png"
+                    alt="" srcset="">
+            </div>
+        </div>
+
+    </section>
 
     <script src="script.js"></script>
 </body>
