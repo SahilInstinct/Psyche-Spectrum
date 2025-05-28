@@ -1,0 +1,221 @@
+/* ---------- Base Setup ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(#240347, #400682);
+    color: #EDEDED;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-image: url(https://videos.openai.com/vg-assets/assets%2Ftask_01jw8kgwa7entvatf0cmx43szw%2F1748340684_img_0.webp?st=2025-05-28T10%3A50%3A10Z&se=2025-06-03T11%3A50%3A10Z&sks=b&skt=2025-05-28T10%3A50%3A10Z&ske=2025-06-03T11%3A50%3A10Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=kiPwmb7PRSf1RRtZ5gIFmiI9fTFZyS244LjZuZSoJrk%3D&az=oaivgprodscus);
+    background-size: cover; /* Makes image cover the whole screen */
+      background-position: top; /* Centers the image */
+      background-repeat: no-repeat; /* Prevents tiling */
+
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgb(0, 0, 0);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 8px 30px rgba(205, 13, 223, 0.3);
+    animation: fadeDown 1s ease forwards;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 45px;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 4px rgb(24, 31, 238));
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #5b02c7;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #CFCFFF;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, #9B5DE5, #00BBF9);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #9B5DE5, #00BBF9);
+    color: #fff !important;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 187, 249, 0.4);
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+
+    background: linear-gradient(135deg, #F15BB5, #9B5DE5);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #9B5DE5;
+    background-color: transparent;
+    border: none;
+}
+
+
+/* ---------- Side Menu ---------- */
+.side-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    background: linear-gradient(145deg, #1E2430, #0B0F1A);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    z-index: 1001;
+    flex-direction: column;
+    transition: right 0.4s ease;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #9B5DE5;
+}
+
+.menu-links {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.menu-links li {
+    margin: 1rem 0;
+}
+
+.menu-links a {
+    color: #EDEDED;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 1040px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .side-menu {
+        display: flex;
+    }
+}
+
+/* -------------Main Content ------------ */
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: center;
+    margin: 100px;
+}
+
+.intro-text {
+    width: 40vw;
+    padding: 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    justify-items: left;
+    
+}
+
+.intro-img {
+    width: 30vw;
+
+}
+
+.aspects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.intro-text span {
+    color: #ffffff;
+    background-color: #3c0a78;
+    font-weight: 600;
+    padding: 5px 15px; 
+    margin: 5px;
+    display: inline-block;
+    border-radius: 20px;
+    border: 2px solid #9B5DE5;
+}

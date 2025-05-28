@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ---------- Base Setup ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(ellipse at bottom right, #30065e, #041743);
+            color: #EDEDED;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+
+        }
+
+        /* ---------- Navbar ---------- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 3rem;
+            background: rgba(2, 7, 61, 0.279);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeDown 1s ease forwards;
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 45px;
+            margin-right: 10px;
+            filter: drop-shadow(0 0 4px rgb(24, 31, 238));
+        }
+
+        .site-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #5b02c7;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #CFCFFF;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(to right, #9B5DE5, #00BBF9);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, #9B5DE5, #00BBF9);
+            color: #fff !important;
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 187, 249, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+
+            background: linear-gradient(135deg, #F15BB5, #9B5DE5);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #9B5DE5;
+            background-color: transparent;
+            border: none;
+        }
+
+
+        /* ---------- Side Menu ---------- */
+        .side-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: 250px;
+            background: linear-gradient(145deg, #1E2430, #0B0F1A);
+            box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            z-index: 1001;
+            flex-direction: column;
+            transition: right 0.4s ease;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #9B5DE5;
+        }
+
+        .menu-links {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .menu-links li {
+            margin: 1rem 0;
+        }
+
+        .menu-links a {
+            color: #EDEDED;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 1040px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .side-menu {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== Navbar ===== -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="https://raw.githubusercontent.com/SahilInstinct/Psyche-Spectrum/refs/heads/main/logo.png" class="logo" alt="Psyche-Spectrum Logo" />
+                <span class="site-title">Psyche-Spectrum</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Personality Test</a></li>
+                <li><a href="#">Personality Types</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="login-btn">Log In</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                &#9776;
+            </button>
+        </nav>
+    </header>
+
+    <!-- ===== Side Menu (Mobile) ===== -->
+    <div class="side-menu" id="side-menu" aria-hidden="true">
+        <div class="menu-header">
+            <button class="close-btn" id="close-btn" aria-label="Close Menu">&times;</button>
+        </div>
+        <ul class="menu-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Test</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sideMenu = document.getElementById('side-menu');
+        const closeBtn = document.getElementById('close-btn');
+
+        hamburger.addEventListener('click', () => {
+            sideMenu.style.right = '0';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sideMenu.style.right = '-100%';
+        });
+
+
+    </script>
+</body>
+
+</html>

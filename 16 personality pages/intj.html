@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTJ - Mastermind</title>
+    <link rel="stylesheet" href="style-mbti.css">
+
+</head>
+
+<body>
+    <!-- ===== Navbar ===== -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="https://raw.githubusercontent.com/SahilInstinct/Psyche-Spectrum/refs/heads/main/logo.png"
+                    class="logo" alt="Psyche-Spectrum Logo" />
+                <span class="site-title">Psyche-Spectrum</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Personality Test</a></li>
+                <li><a href="#">Personality Types</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="login-btn">Log In</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                &#9776;
+            </button>
+        </nav>
+    </header>
+
+    <!-- ===== Side Menu (Mobile) ===== -->
+    <div class="side-menu" id="side-menu" aria-hidden="true">
+        <div class="menu-header">
+            <button class="close-btn" id="close-btn" aria-label="Close Menu">&times;</button>
+        </div>
+        <ul class="menu-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Test</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    
+
+
+    <!-- Main Content -->
+    <main>
+        <div class="intro">
+            <div class="intro-text">
+                <div class="aspects">
+                    <span>Introverted</span>
+                    <span>Intuitive</span>
+                    <span>Thinking</span>
+                    <span>Judging</span>
+                </div>
+                <h1>Mastermind</h1>
+                <h2>INTJ</h2>
+            </div>
+            <div class="intro-img">
+                <img class="intro-img"
+                    src="https://videos.openai.com/vg-assets/assets%2Ftask_01jwb39mwefhzra2fkbq4b79cg%2F1748424339_img_1.webp?st=2025-05-28T08%3A06%3A13Z&se=2025-06-03T09%3A06%3A13Z&sks=b&skt=2025-05-28T08%3A06%3A13Z&ske=2025-06-03T09%3A06%3A13Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=HxtV3s7v%2FrOXUnc2TUIBwR%2BrLuNHPdRatJMqNif8Uoc%3D&az=oaivgprodscus"
+                    alt="" srcset="">
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sideMenu = document.getElementById('side-menu');
+        const closeBtn = document.getElementById('close-btn');
+
+        hamburger.addEventListener('click', () => {
+            sideMenu.style.right = '0';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sideMenu.style.right = '-100%';
+        });
+
+
+    </script>
+</body>
+
+</html>
