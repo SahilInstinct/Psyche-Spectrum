@@ -12,10 +12,6 @@ body {
     color: #EDEDED;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    background-image: url(https://videos.openai.com/vg-assets/assets%2Ftask_01jw8kgwa7entvatf0cmx43szw%2F1748340684_img_0.webp?st=2025-05-28T10%3A50%3A10Z&se=2025-06-03T11%3A50%3A10Z&sks=b&skt=2025-05-28T10%3A50%3A10Z&ske=2025-06-03T11%3A50%3A10Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=kiPwmb7PRSf1RRtZ5gIFmiI9fTFZyS244LjZuZSoJrk%3D&az=oaivgprodscus);
-    background-size: cover; /* Makes image cover the whole screen */
-      background-position: top; /* Centers the image */
-      background-repeat: no-repeat; /* Prevents tiling */
 
 }
 
@@ -183,9 +179,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px;
 
     text-align: center;
-    margin: 100px;
+    margin: 100px 20px;
+    border: #00BBF9 solid 2px;
+    border-radius: 30px;
 }
 
 .intro-text {
@@ -214,6 +213,7 @@ body {
     background-color: #3c0a78;
     font-weight: 600;
     padding: 5px 15px; 
+    font-size:small;
     margin: 5px;
     display: inline-block;
     border-radius: 20px;
