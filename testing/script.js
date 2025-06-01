@@ -1,27 +1,31 @@
-// script.js
-const hamburger = document.getElementById("hamburger");
-const sideMenu = document.getElementById("side-menu");
-const closeBtn = document.getElementById("close-btn");
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-// Open side menu
-hamburger.addEventListener("click", () => {
-    sideMenu.style.right = "0";
-    sideMenu.setAttribute("aria-hidden", "false");
-    hamburger.setAttribute("aria-expanded", "true");
+hamburger.addEventListener('click', () => {
+  if (navLinks.style.display === 'flex') {
+    navLinks.style.display = 'none';
+  } else {
+    navLinks.style.display = 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.background = 'rgba(0, 0, 0, 0.9)';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '60px';
+    navLinks.style.right = '20px';
+    navLinks.style.padding = '1rem';
+    navLinks.style.borderRadius = '12px';
+  }
 });
 
-// Close side menu
-closeBtn.addEventListener("click", () => {
-    sideMenu.style.right = "-100%";
-    sideMenu.setAttribute("aria-hidden", "true");
-    hamburger.setAttribute("aria-expanded", "false");
-});
-
-// Close sidebar when clicking outside of it
-window.addEventListener("click", (e) => {
-    if (!sideMenu.contains(e.target) && !hamburger.contains(e.target)) {
-        sideMenu.style.right = "-100%";
-        sideMenu.setAttribute("aria-hidden", "true");
-        hamburger.setAttribute("aria-expanded", "false");
+// Smooth scroll for anchor links
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      if (window.innerWidth < 768) navLinks.style.display = 'none';
     }
+  });
 });

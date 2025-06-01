@@ -1,179 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Psyche Spectrum</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    min-height: 100vh;
-    color: white;
-    overflow-x: hidden;
-  }
-
-  /* Animated background with subtle moving gradient */
-  body::before {
-    content: "";
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%);
-    animation: rotateBG 30s linear infinite;
-    z-index: -1;
-  }
-
-  @keyframes rotateBG {
-    0% { transform: rotate(0deg);}
-    100% { transform: rotate(360deg);}
-  }
-
-  header {
-    text-align: center;
-    padding: 100px 20px 60px;
-  }
-
-  header h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #ff61a6, #ffc600);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: glowText 3s ease-in-out infinite alternate;
-  }
-
-  @keyframes glowText {
-    0% {
-      text-shadow: 0 0 10px #ff61a6, 0 0 20px #ff61a6, 0 0 40px #ffc600;
-    }
-    100% {
-      text-shadow: 0 0 20px #ff61a6, 0 0 40px #ff61a6, 0 0 60px #ffc600;
-    }
-  }
-
-  header p {
-    font-size: 1.2rem;
-    margin: 15px 0 30px;
-    color: #eee;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .btn-start {
-    background: #ff61a6;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(255,97,166,0.6);
-    transition: all 0.3s ease;
-  }
-
-  .btn-start:hover {
-    background: #ffc600;
-    color: #333;
-    box-shadow: 0 8px 20px rgba(255,198,0,0.8);
-    transform: scale(1.05);
-  }
-
-  /* Features section */
-  section.features {
-    display: flex;
-    justify-content: space-around;
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-
-  .feature {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 30px;
-    flex: 1 1 250px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease;
-  }
-
-  .feature:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 25px rgba(255, 198, 0, 0.8);
-  }
-
-  .feature h3 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-  }
-
-  .feature p {
-    font-size: 1rem;
-    color: #ddd;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px 10px;
-    background: rgba(0,0,0,0.3);
-    color: #ccc;
-    font-size: 0.9rem;
-  }
-
-  footer a {
-    color: #ff61a6;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-  }
-
-  footer a:hover {
-    color: #ffc600;
-  }
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psyche-Spectrum</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-
-<header>
-  <h1>Psyche Spectrum</h1>
-  <p>Discover your true self. Unlock your personality, career potential, and relationship insights with Psyche Spectrum.</p>
-  <button class="btn-start" onclick="location.href='/start-test'">Start Your Test</button>
-</header>
-
-<section class="features">
-  <div class="feature">
-    <h3>Career Guidance</h3>
-    <p>Find careers that match your personality and strengths for a fulfilling future.</p>
+  <!-- Background Video -->
+  <div class="video-wrapper">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="brainbg.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
   </div>
-  <div class="feature">
-    <h3>Relationship Insights</h3>
-    <p>Understand your compatibility with others in love, friendship, and work.</p>
-  </div>
-  <div class="feature">
-    <h3>Self Discovery</h3>
-    <p>Gain deep insights into your strengths, weaknesses, and growth paths.</p>
-  </div>
-</section>
 
-<footer>
-  <p>© 2025 Psyche Spectrum | <a href="/about">About</a> | <a href="/contact">Contact</a></p>
-</footer>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🧠 Psyche-Spectrum</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#types">Types</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#cta">Test</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">☰</button>
+    </nav>
+  </header>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Explore Your Inner Universe</h1>
+      <p>Take the Psyche-Spectrum test and discover your unique personality type.</p>
+      <a href="#cta" class="test-btn">Start the Test</a>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="section">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">Answer thoughtful questions</div>
+      <div class="step">Receive your MBTI personality</div>
+      <div class="step">Unlock career & relationship insights</div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="section">
+    <h2>Why It Matters</h2>
+    <div class="benefits">
+      <div class="benefit-card">💼 Understand Your Career Path</div>
+      <div class="benefit-card">💖 Improve Your Relationships</div>
+      <div class="benefit-card">🧘 Grow Your True Self</div>
+    </div>
+  </section>
+
+  <!-- Personality Types -->
+  <section id="types" class="section">
+    <h2>Personality Types</h2>
+    <p>Get to know all 16 types and see who you align with most.</p>
+    <div class="type-grid">
+      <div class="type-box">INFJ</div>
+      <div class="type-box">ENFP</div>
+      <div class="type-box">ISTJ</div>
+      <div class="type-box">ENTP</div>
+      <!-- Add more boxes if needed -->
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="section cta">
+    <h2>Ready to Begin?</h2>
+    <p>Uncover your cosmic blueprint and embrace your potential.</p>
+    <a href="#" class="test-btn">Take the Test</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Psyche-Spectrum. Designed with 💜</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

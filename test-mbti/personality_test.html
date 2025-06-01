@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Personality Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="WhatsApp Image 2025-04-16 at 22.31.04_20642c4a-Photoroom.png">
+    <title> Your Personality Type</title>
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MBTI Personality Test</h1>
+            <p class="intro">Discover your personality type based on the five MBTI dimensions. Answer all 50 questions honestly for the most accurate results.</p>
+        </header>
+        
+        <div class="test-container" id="testContainer">
+            <div class="progress-indicator" id="progressIndicator">Page 1 of 10</div>
+            <div id="pagesContainer"></div>
+            <div class="btn-container">
+                <button class="btn" id="prevBtn" disabled>Previous Page</button>
+                <button class="btn" id="nextBtn">Next Page</button>
+                <button class="btn" id="submitBtn" style="display: none;">Get Results</button>
+            </div>
+        </div>
+        
+        <div class="result-container" id="resultContainer">
+            <div class="result-header">
+                <h2>Your Personality Results</h2>
+                <p>Here's how you scored on each of the MBTI dimensions:</p>
+            </div>
+            
+            <div id="resultsContent"></div>
+            
+            <div class="btn-container">
+                <button class="btn restart-btn" id="restartBtn">Take Test Again</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 MBTI Personality Test | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="main2.js"></script>
+</body>
+</html>
