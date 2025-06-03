@@ -326,7 +326,11 @@ section p {
     .hero-content h1 { font-size: 2rem; }
     section { padding: 3rem 1rem; }
 
-    .flash-cards,
+    .flash-cards {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
     .flash-cards-opp {
         flex-direction: column;
         align-items: center;
